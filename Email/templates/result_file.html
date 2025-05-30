@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kết quả phân loại Email</title>
+    <style>
+        body {
+            font-family: sans-serif; /* Phông chữ mặc định dễ đọc */
+            margin: 20px;
+        }
+        h1 {
+            text-align: center; /* Tiêu đề căn giữa */
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd; /* Viền bảng nhẹ nhàng */
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2; /* Màu nền cho header bảng */
+            font-weight: bold;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center; /* Phân trang căn giữa */
+            margin-top: 20px;
+        }
+        .pagination a {
+            padding: 8px 16px;
+            margin: 0 4px;
+            border: 1px solid #ddd;
+            text-decoration: none;
+            color: black;
+            border-radius: 4px; /* Bo tròn góc liên kết */
+        }
+        .pagination a.active {
+            background-color: #4CAF50; /* Màu nền cho trang hiện tại */
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+        .pagination a:hover:not(.active) {
+            background-color: #ddd; /* Hiệu ứng hover */
+        }
+        .summary {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email classification results</h1>
+
+<!--    <div class="summary">-->
+<!--      <p>Tổng số Email Spam: {{ spam_count }}</p>-->
+<!--      <p>Tổng số Email Ham: {{ ham_count }}</p>-->
+<!--    </div>-->
+
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
+
+    <div class="pagination">
+        {% if page > 1 %}
+            <a href="{{ url_for('show_results', page=page-1) }}">&laquo; Trang trước</a>
+        {% endif %}
+
+        {% for p in pages %}
+            <a href="{{ url_for('show_results', page=p) }}" {% if p == page %}class="active"{% endif %}>{{ p }}</a>
+        {% endfor %}
+
+        {% if page < num_pages %}
+            <a href="{{ url_for('show_results', page=page+1) }}">Trang sau &raquo;</a>
+        {% endif %}
+    </div>
+
+</body>
+</html>

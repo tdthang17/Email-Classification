@@ -1,0 +1,50 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Email Spam Classifier</title>-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">  -->
+<!--        &lt;!&ndash; Chèn hình ảnh logo  &ndash;&gt;-->
+<!--        <img src="{{ url_for('static', filename='images/backgrond.jpg') }}" alt="Logo">-->
+
+<!--        <h1>Email Spam Classifier</h1>-->
+<!--        <form action="/predict" method="POST">-->
+<!--            <textarea name="email" rows="5" cols="40" spellcheck="false" placeholder="Enter email content ..."></textarea>-->
+<!--            <br><br>-->
+<!--            <input type="submit" value="Classify">-->
+<!--        </form>-->
+<!--    </div> -->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Chèn hình ảnh logo  -->
+        <img src="{{ url_for('static', filename='images/backgrond.jpg') }}" alt="Logo">
+
+        <h1>Email Spam Classifier</h1>
+        <form action="/predict" method="POST">
+            <textarea name="email" rows="5" cols="40" spellcheck="false" placeholder="Enter email content ..."></textarea>
+            <br><br>
+            <input type="submit" value="Classify">
+        </form>
+        <br><br>
+        <a href="/upload">Upload CSV to Classify Emails</a>  <!-- Liên kết tới trang upload CSV -->
+    </div>
+</body>
+</html>
+
+

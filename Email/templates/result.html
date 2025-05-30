@@ -1,0 +1,42 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Classification results</title>-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">  -->
+<!--        &lt;!&ndash; Chèn hình ảnh logo nếu có &ndash;&gt;-->
+<!--        <img src="{{ url_for('static', filename='images/backgrond.jpg') }}" alt="Logo">-->
+
+<!--        <h1>Classification results</h1>-->
+<!--        <p>Your email type is classified as: {{ prediction }}</p>-->
+<!--        <a href="/">Other email classification</a>-->
+<!--    </div>  -->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Chèn hình ảnh logo nếu có -->
+        <img src="{{ url_for('static', filename='images/backgrond.jpg') }}" alt="Logo">
+
+        <h1>Classification results</h1>
+        <p>Your email type is classified as: <strong>{{ prediction }}</strong></p>  <!-- Hiển thị kết quả phân loại -->
+        <br>
+        <a href="/">Other email classification</a>  <!-- Liên kết về trang chủ -->
+    </div>
+</body>
+</html>
+
+
